@@ -1,0 +1,42 @@
+let library = [];
+
+function addBook(title, author, ISBN, genre, year, copies) {
+    const book = {
+        title: title,
+        author: author,
+        ISBN: ISBN,
+        genre: genre,
+        year: year,
+        copies: copies
+    };
+    library.push(book);
+}
+
+function displayBooks() {
+    console.log("Digital Library:");
+    for (let i = 0; i < library.length; i++) {
+        const book = library[i];
+        console.log("Title:", book.title);
+        console.log("Author:", book.author);
+        console.log("ISBN:", book.ISBN);
+        console.log("Genre:", book.genre);
+        console.log("Year:", book.year);
+        console.log("Copies Available:", book.copies);
+        console.log("\n\n");
+    }
+}
+
+function totalBooks() {
+    return library.length;
+}
+
+addBook("1984", "George Orwell", "123456789", "Dystopian", 1949, 12);
+addBook("To Kill a Mockingbird", "Harper Lee", "987654321", "Fiction", 1960, 8);
+addBook("The Great Gatsby", "F. Scott Fitzgerald", "123498765", "Fiction", 1925, 5);
+addBook("Moby Dick", "Herman Melville", "112233445", "Adventure", 1851, 4);
+addBook("Pride and Prejudice", "Jane Austen", "556677889", "Romance", 1813, 10);
+
+displayBooks();
+
+const totalLibBooks = totalBooks();
+console.log("Total Books in Library: " + totalLibBooks);
